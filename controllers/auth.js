@@ -44,7 +44,7 @@ async function login(req, res) {
     let payload = generatePayload(user);
     sendCookies(payload, res);
 
-    res.status(200).json({ msg: `You are now logged in` });
+    res.status(200).json({ user: { id: user._id, user: user.username } });
 }
 
 async function logout(req, res) {
